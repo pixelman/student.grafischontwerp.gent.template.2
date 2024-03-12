@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<div w3-include-html="includes/head.html"></div>
+	</head>
+	<body>
+		<!--  skip intro  -->
+		<div w3-include-html="projects/skipintro-video.html"></div>
+
+
+		<div class="w3-container nopadding show">
+			<div class="w3-row nopadding">
+				<!--  right scrollabe col CONTENT  -->
+				<div class="w3-col s12 show" id="site">
+					<div w3-include-html="projects/bob-2-columns.html"></div>
+					<div w3-include-html="projects/bob-3-columns.html"></div>
+					<div w3-include-html="projects/video.html"></div>
+					<div w3-include-html="projects/gif.html"></div>
+					<div w3-include-html="projects/thumbs.html"></div>
+					<div w3-include-html="projects/slideshow.html"></div>
+					<div w3-include-html="projects/slideshow2.html"></div>
+					<div w3-include-html="includes/links.html"></div>
+
+				</div>
+			</div>
+		</div>
+		<!--  end archive  -->
+
+		<!--  Javascript that makes the magic happen -->
+		<script src="https://www.w3schools.com/lib/w3.js"></script>
+		<script>
+
+			w3.includeHTML(myCallback);
+
+			function myCallback() {
+				// first slideshow with buttons
+				var myShow1 = w3.slideshow(".slides1", 0);
+				document.getElementById("previous1").addEventListener("click", function(){myShow1.previous();});
+				document.getElementById("next1").addEventListener("click", function(){myShow1.next();});
+				// second slideshow autoplay no buttons
+				var myShow2 = w3.slideshow(".slides2", 1000);
+				// second slideshow autoplay no buttons
+				var myShow3 = w3.slideshow(".slides3", 1500);
+			}		
+		</script>
+
+
+	</body>
+</html>
